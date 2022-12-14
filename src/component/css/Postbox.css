@@ -1,0 +1,47 @@
+/* Add Post section style */
+.panel {
+    box-shadow: 0 2px 0 rgba(0,0,0,0.075);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 15px;
+  }
+  
+  .panel .panel-footer, .panel>:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .panel .panel-heading, .panel>:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .panel-body {
+    padding: 5px 10px;
+  }
+  
+  .btn-trans {
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+  } 
+  
+  .btn-icon {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  
+  .btn-sm, .btn-group-sm>.btn, .btn-icon.btn-sm {
+    padding: 5px 10px !important;
+  }
+  
+  .mar-top a f-icon{
+    padding-right: 5px;
+  }
+  
+  .mar-top {
+    margin-top: 15px;
+  }
+  .btn-post{
+    margin-left: 269px;
+  }

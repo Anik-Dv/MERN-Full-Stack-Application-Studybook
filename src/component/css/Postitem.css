@@ -1,0 +1,120 @@
+
+  /* PostItems Styles Here  */
+  .Vcards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .Vcard {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .Vcard__image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .Vcard__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: #e7e2e2;
+    color: black;
+    transform: translateY(100%);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .Vcard:hover .Vcard__overlay {
+    transform: translateY(0);
+  }
+  
+  .Vcard__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .Vcard__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .Vcard__arc path {
+    fill: var(--surface-color);
+    /* d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z"); */
+  }
+  
+  .Vcard:hover .Vcard__header {
+    transform: translateY(0);
+  }
+  
+  .Vcard__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  .Vcard__title {
+    font-size: 1em;
+    margin: 0 0 0.3em;
+    color: #161616;
+    font-weight: bolder;
+  }
+  
+  .Vcard__tagline {
+    display: block;
+    margin: 0.5em 0;
+    font-family: "MockFlowFont";
+    font-size: 0.8em;
+    color: #161616;
+    font-weight: bold;
+  }
+  
+  .Vcard__status {
+    font-size: 0.8em;
+    color: #161616;
+    font-weight: bold;
+  }
+  
+  .Vcard__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #161616;
+    font-family: "MockFlowFont";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  
+  /* Button Styles Start Here  */
+  .LikeBtn{
+    width: 400px;
+    height: 50px;
+  }
+  .Post_btn{
+    font-size: 12px;
+  }

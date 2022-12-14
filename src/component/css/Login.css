@@ -1,0 +1,192 @@
+
+/* .background{
+width: 430px;
+height: 520px;
+position: absolute;
+transform: translate(-50%,-50%);
+left: 50%;
+top: 60%;
+}
+.background .shape{
+height: 200px;
+width: 200px;
+position: absolute;
+border-radius: 50%;
+}
+.shape:first-child{
+background: linear-gradient(
+	#1845ad,
+	#23a2f6
+);
+left: -80px;
+top: -80px;
+}
+.shape:last-child{
+background: linear-gradient(
+	to right,
+	#ff512f,
+	#f09819
+);
+right: -30px;
+bottom: -80px;
+} */
+
+
+/* backgroud styles */
+
+/* * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito", sans-serif;
+  } */
+  
+  body {
+	background: #1f1f47;
+	width: 100%;
+	height: 400px;
+	
+  }
+  
+  .blob {
+	position: absolute;
+	width: 500px;
+	height: 400px;
+	background: linear-gradient(180deg,
+		rgba(47, 184, 255, 0.42) 31.77%,
+		#5c9df1 100%);
+	mix-blend-mode: color-dodge;
+	-webkit-animation: move 25s infinite alternate;
+	animation: move 25s infinite alternate;
+	transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+  }
+  
+  .blob:hover {
+	width: 520px;
+	height: 450px;
+	-webkit-filter: blur(30px);
+	filter: blur(30px);
+	box-shadow:
+	  inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+	  inset 100px 100px 0 0px #fa709a,
+	  inset 200px 200px 0 0px #784ba8,
+	  inset 300px 300px 0 0px #2b86c5;
+  }
+  
+  @-webkit-keyframes move {
+	from {
+	  transform: translate(-100px, -50px) rotate(-90deg);
+	  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+	}
+  
+	to {
+	  transform: translate(500px, 100px) rotate(-10deg);
+	  border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+	}
+  }
+  
+  @keyframes move {
+	from {
+	  transform: translate(-100px, -50px) rotate(-90deg);
+	  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+	}
+  
+	to {
+	  transform: translate(500px, 100px) rotate(-10deg);
+	  border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+	}
+  }
+
+
+.loginForm{
+height: 550px;
+width: 400px;
+color: #ffffff;
+background-color: rgba(255,255,255,0.13);
+position: absolute;
+transform: translate(-50%,-50%);
+top: 54%;
+left: 50%;
+border-radius: 10px;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(255,255,255,0.1);
+box-shadow: 0 0 40px rgba(8,7,16,0.6);
+padding: 50px 35px;
+font-family: 'Poppins',sans-serif;
+}
+/* .loginForm *{
+color: #ffffff;
+letter-spacing: 0.5px;
+outline: none;
+border: none;
+} */
+/* .loginForm h3{
+font-size: 32px;
+font-weight: 500;
+line-height: 42px;
+text-align: center;
+} */
+
+.Loglabal{
+display: block;
+margin-top: 30px;
+font-size: 16px;
+font-weight: 500;
+color: #ffffff;
+}
+.Loginput{
+color: #ffff;
+display: block;
+height: 50px;
+width: 100%;
+background-color: rgba(255,255,255,0.07);
+border-radius: 3px;
+padding: 0 10px;
+margin-top: 8px;
+font-size: 14px;
+font-weight: 300;
+}
+::placeholder{
+color: #ffffff;
+}
+.Logbtn{
+margin-top: 50px;
+width: 100%;
+background-color: #2847c7;
+color: #080710;
+padding: 15px 0;
+font-size: 18px;
+font-weight: 600;
+border-radius: 5px;
+cursor: pointer;
+}
+.Logbtn:hover{
+background-color: transparent;
+color: #ffffff;
+font-weight: bold;
+}
+.social{
+margin-top: 30px;
+display: flex;
+cursor: pointer;
+}
+.social div{
+background: red;
+width: 150px;
+border-radius: 3px;
+padding: 5px 10px 10px 5px;
+background-color: rgba(255,255,255,0.27);
+color: #eaf0fb;
+text-align: center;
+}
+.social div:hover{
+background-color: rgba(255,255,255,0.47);
+color:blueviolet;
+}
+.social .fb{
+margin-left: 25px;
+}
+.social i{
+margin-right: 4px;
+font: bold;
+}
