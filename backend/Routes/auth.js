@@ -1,5 +1,4 @@
 const express = require("express");
-// import express from "express";
 //import express router
 const router = express.Router();
 //import Schema/Model

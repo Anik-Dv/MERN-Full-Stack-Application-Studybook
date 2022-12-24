@@ -1,4 +1,5 @@
 import React from "react";
+import Chat from "./Chat";
 import Createposts from "./Createpost";
 import "./css/Home.css";
 import Post from "./Post";
@@ -253,7 +254,15 @@ function Home(props) {
                                     </div>
                                 </div>
                             </div>
-                                 {/* Footer section here */}
+
+                            <Chat/>
+                            
+                            {/* Footer section here */}
+                            <footer className="footer">
+                            <section className="footer_section">
+                            <h1>Footer</h1>
+                            </section>
+                            </footer>
                         </div>
                     </div>
                 </div>

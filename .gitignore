@@ -1,3 +1,5 @@
 Features.txt.txt
 node_modules/
 extra fle/
+/src/component/Chat.js
+/src/component/css/chat.css
