@@ -3,13 +3,19 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import PostContext from "../Context/post/PostContext";
 import Postitem from "./Postitem";
 import "./css/Post.css";
+import { useNavigate } from "react-router-dom";
 
 function Post() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const context = useContext(PostContext);
     const { posts, getPost, editPost } = context;
     useEffect(() => {
-        getPost();
+        if (localStorage.getItem('token')) {
+            getPost();
+        }
+        else {
+            navigate("/login")
+        }
         // eslint-disable-next-line
     }, []);
 
@@ -27,7 +33,7 @@ function Post() {
 
     const Updateposts = (currentPost) => {
         ref.current.click();
-        setPost({id:currentPost._id, etitle:currentPost.title, emessage:currentPost.message, etag: currentPost.tag, ecreator:currentPost.creator});
+        setPost({ id: currentPost._id, etitle: currentPost.title, emessage: currentPost.message, etag: currentPost.tag, ecreator: currentPost.creator });
 
     }
     const onChange = (e) => {
@@ -53,7 +59,7 @@ function Post() {
                                 <div className="col-md">
                                     <div className="form-floating">
                                         <input type="text" className="form-control" id="etitle" name="etitle" placeholder="type post title here" onChange={onChange} required minLength={4} value={post.etitle} />
-                                        
+
                                     </div>
                                 </div>
                                 <hr />
@@ -65,7 +71,7 @@ function Post() {
                                     <div className="col-md">
                                         <div className="form-floating">
                                             <input type="tag" className="form-control" id="etag" name="etag" placeholder="type #tag name here" onChange={onChange} required minLength={2} value={post.etag} />
-                                            
+
                                         </div>
                                     </div>
                                     <div className="col-md">
@@ -80,7 +86,7 @@ function Post() {
                                     </div>
                                 </div>
                                 <div className="mar-top clearfix">
-                                    
+
 
                                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
                                         <defs>
@@ -93,26 +99,26 @@ function Post() {
                                         </defs>
                                     </svg>
 
-                                    
+
                                 </div>
                             </div>
                         </form>
-                        <button type="button" className=" btn btn-close btn-outline-warning CPclose_btn" data-bs-dismiss="offcanvas" aria-label="Close">Close</button>
-                                    <button id="gooey-button" type='submit' onClick={handleClick}>
-                                        Update Post
-                                        <span className="bubbles">
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                            <span className="bubble"></span>
-                                        </span>
-                                    </button>
+                        <button type="button" className=" btn btn-close btn-outline-warning CPclose_btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button id="gooey-button" type='submit' onClick={handleClick}>
+                            Update Post
+                            <span className="bubbles">
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                                <span className="bubble"></span>
+                            </span>
+                        </button>
 
                     </div>
                 </div>

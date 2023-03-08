@@ -12,7 +12,7 @@ function PostsState(props) {
       const response = await fetch(`${Host}api/post/fetchallpost`, {
         method: "GET",
         headers: {"Content-Type": "application/json",
-                  "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM2Y2Y1NGQ0NDc1ODE5ODRmMzdiZmJiIn0sImlhdCI6MTY2ODE4OTg3MX0.qDZ2rAUJzBbaVKC7tqKUeaW3HVUp0cJsdsIBRjxjw8Y"
+                  "auth-token": localStorage.getItem('token'),
                 }
       });
       const json = await response.json();
@@ -31,7 +31,7 @@ function PostsState(props) {
         mode: 'cors',
         headers: {
           'Content-Type': "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM2Y2Y1NGQ0NDc1ODE5ODRmMzdiZmJiIn0sImlhdCI6MTY2ODE4OTg3MX0.qDZ2rAUJzBbaVKC7tqKUeaW3HVUp0cJsdsIBRjxjw8Y",
+          "auth-token": localStorage.getItem('token'),
         },
 
         body: JSON.stringify({title, message, tag, creator}) 
@@ -48,7 +48,7 @@ function PostsState(props) {
         mode: 'cors',
         headers: {
           "Content-Type": "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM2Y2Y1NGQ0NDc1ODE5ODRmMzdiZmJiIn0sImlhdCI6MTY2ODE4OTg3MX0.qDZ2rAUJzBbaVKC7tqKUeaW3HVUp0cJsdsIBRjxjw8Y",
+          "auth-token": localStorage.getItem('token'),
         },
       });
       const json = await response.json();
@@ -68,7 +68,7 @@ function PostsState(props) {
         method: 'PUT',
         headers: {
           'Content-Type': "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM2Y2Y1NGQ0NDc1ODE5ODRmMzdiZmJiIn0sImlhdCI6MTY2ODE4OTg3MX0.qDZ2rAUJzBbaVKC7tqKUeaW3HVUp0cJsdsIBRjxjw8Y",
+          "auth-token": localStorage.getItem('token'),
         },
 
         body: JSON.stringify({title, message, tag, creator}) 

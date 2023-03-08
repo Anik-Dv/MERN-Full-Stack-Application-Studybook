@@ -4,7 +4,7 @@ import Home from './component/Home';
 import Navber from './component/Navber';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Userprofile from './component/Userprofile';
-import Alert from "./component/Alert";
+// import Alert from "./component/Alert";
 import PostsState from "./Context/post/PostsState";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
@@ -27,13 +27,13 @@ const App = () => {
    <PostsState>
    <Router>
    <Navber/>
-   <Alert alert={alert} />
+   {/* <Alert alert={alert} /> */}
    <div className='container'>
    <Routes>
    <Route exact path="/" element={<Home showAlert={showAlert} />}></Route>
    <Route exact path="/userprofile" element={<Userprofile showAlert={showAlert} />}></Route>
-   <Route exact path="/login" element={<Login/>}></Route>
-   <Route exact path="/signup" element={<Signup/>}></Route>
+   <Route exact path="/login" element={<Login showAlert={showAlert} />}></Route>
+   <Route exact path="/signup" element={<Signup showAlert={showAlert} />}></Route>
    </Routes>
    </div>
    </Router>

@@ -129,6 +129,46 @@ router.post('/getuser',fatchuserdata, [
     }
 ]);
 
+//Creating Route: 4 - Updating User data his id, Using : PUT "/api/auth/userdata/:id". Must be Login required.
+router.put('/updateuser/:id', fatchuserdata,
+    async(req,res)=>{
+        const { name, email } = req.body;
+        try{
+            const updateUser={};
+
+            if(name){
+                updateUser.name=name;
+            }
+            if(email){
+                updateUser.email=email;
+            }
+
+            // Find User id What he Update?
+            let user = await User.findById(req.params.id);
+            //when Not find any details then showing this error.
+            if (!user) {
+            return res.status(404).send("not found anything!");
+            }
+            //user can only update allowed her/his deteils.
+            if (user.id.toString() !== req.user.id) {
+                return res.status(401).send("Not Allowed!")
+            }
+            //Find Post and send the new posts and Update as a response.
+            user = await User.findByIdAndUpdate(
+                req.params.id,
+                { $set: updateUser },
+                { new: true }
+            )
+            res.json({ user });
+        } catch (error) {
+            console.error(error.message);
+            res.status(500).send("Internal Server Error")
+        }
+
+
+    }
+)
+
 
 
 
